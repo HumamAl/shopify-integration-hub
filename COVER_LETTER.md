@@ -1,4 +1,4 @@
-Building Shopify integrations that don't break during BFCM is the hard part most platforms skip — I built a working demo of what your integration hub could look like: {VERCEL_URL}
+Building Shopify integrations that don't break during BFCM is the hard part most platforms skip — I built a working demo of what your integration hub could look like: https://shopify-integration-hub.vercel.app
 
 The demo includes multi-store sync monitoring, webhook delivery tracking, API rate limit dashboards, and the kind of merchant-facing UI that makes integration status actually visible (not buried in server logs).
 
