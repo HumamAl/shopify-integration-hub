@@ -102,13 +102,11 @@
   --surface-active: oklch(0.94 0 0);
 
   /* ── Primary Color ───────────────────────────────────────────
-     !! OVERRIDE REQUIRED — Layout Builder must replace --primary and
-        --primary-h with domain-appropriate oklch values.
-        See references/design-system.md for the 14-domain color table.
-        QA rejects builds where --primary stays oklch(0.205 0 0). !! */
-  --primary: oklch(0.205 0 0);
+     AESTHETIC: saas-modern / DOMAIN: ecommerce-integration
+     Teal — Shopify ecosystem influence (hue ~170)               */
+  --primary: oklch(0.55 0.17 170);
   --primary-foreground: oklch(0.985 0 0);
-  --primary-h: 270; /* Integer hue extracted from --primary */
+  --primary-h: 170; /* Integer hue extracted from --primary */
 
   /* ── Derived Color Tokens ────────────────────────────────── */
   --section-dark: oklch(0.10 0.02 var(--primary-h));
@@ -116,7 +114,7 @@
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
+  --accent: oklch(0.60 0.14 250);
   --accent-foreground: oklch(0.205 0 0);
 
   /* ── Semantic Colors ─────────────────────────────────────── */
@@ -129,27 +127,26 @@
   /* ── Borders & Inputs ────────────────────────────────────── */
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --ring: oklch(0.55 0.17 170);
 
   /* ── Chart Colors ────────────────────────────────────────────
-     Layout Builder harmonizes to primary hue. See design-system.md. */
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+     Harmonized to teal/green primary hue (170).                */
+  --chart-1: oklch(0.55 0.17 170);   /* Teal primary */
+  --chart-2: oklch(0.60 0.14 250);   /* Purple */
+  --chart-3: oklch(0.65 0.18 145);   /* Green */
+  --chart-4: oklch(0.70 0.15 85);    /* Amber */
+  --chart-5: oklch(0.58 0.12 200);   /* Blue */
 
   /* ── Sidebar Colors ──────────────────────────────────────────
-     After color override: --sidebar-primary and --sidebar-ring
-     should match --primary.                                     */
+     --sidebar-primary and --sidebar-ring match --primary.       */
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary: oklch(0.55 0.17 170);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-ring: oklch(0.55 0.17 170);
 
   /* ── Surface / Card Tokens ───────────────────────────────────
      Driven by [data-theme] aesthetic — not overridden per domain.
@@ -874,6 +871,16 @@
      Standard page content wrapper. Reads --content-padding.     */
   .page-container {
     padding: var(--content-padding, 1.5rem);
+  }
+
+  /* ── Staggered card reveal animation ────────────────────────── */
+  @keyframes fade-up-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up-in {
+    animation-name: fade-up-in;
+    animation-timing-function: ease-out;
   }
 
   /* ── Neobrutalism / Brand-Forward press animation ─────────────
